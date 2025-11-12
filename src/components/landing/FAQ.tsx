@@ -30,7 +30,7 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">

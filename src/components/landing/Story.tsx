@@ -3,7 +3,7 @@ import storyImage from "@/assets/story-image.jpg";
 
 const Story = () => {
   return (
-    <section className="py-24 bg-background">
+    <section id="story" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image */}
@@ -23,26 +23,33 @@ const Story = () => {
           <div className="space-y-6 animate-fade-in-up delay-200">
             <div className="space-y-6 text-lg leading-relaxed text-foreground">
               <p className="text-2xl font-medium text-primary">
-                When my father had a "sudden" heart attack, it wasn't sudden.
+                You know how they say heart attacks happen "suddenly"?
               </p>
               
               <p className="text-muted-foreground">
-                The signs were there — blood pressure spikes, skipped meds, stress — but no one connected them.
+                That's what they told my family when my dad collapsed at his desk. 52 years old, "perfectly healthy," according to his last checkup 6 months ago.
               </p>
               
               <p className="text-muted-foreground">
-                <span className="font-semibold text-foreground">Hospitals make money when you fall sick.</span>{" "}
-                We built CardioShield to change that.
+                But it wasn't sudden at all. Looking back, we saw the signs: his blood pressure creeping up, skipping his evening walks because of work stress, not sleeping well. His smartwatch had all this data. Nobody connected the dots.
+              </p>
+              
+              <p className="text-muted-foreground">
+                <span className="font-semibold text-foreground">Here's the uncomfortable truth:</span> hospitals make money when you're sick. Insurance pays for surgeries, not prevention. The system is broken.
               </p>
               
               <p className="text-xl font-medium text-foreground">
-                Your health shouldn't depend on luck. It should depend on data.
+                So we built the thing that could have saved my dad.
+              </p>
+              
+              <p className="text-muted-foreground">
+                CardioShield watches all those little signs — the ones doctors miss between visits. It connects the dots that no human has time to connect. It gives you the warnings my dad never got.
               </p>
             </div>
 
             <div className="pt-6">
               <Button size="lg" className="text-lg px-8">
-                Protect Your Family — Join CardioShield Free
+                Don't Wait for Warning Signs — Get AI Protection
               </Button>
             </div>
 

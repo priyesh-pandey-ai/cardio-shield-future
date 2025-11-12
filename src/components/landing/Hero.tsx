@@ -1,72 +1,151 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Activity } from "lucide-react";
-import heroDashboard from "@/assets/hero-dashboard.jpg";
+import { Heart, Activity, Play, Shield, Users, TrendingDown } from "lucide-react";
+import VideoModal from "./VideoModal";
+import { useState, useEffect } from "react";
+
+const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let startTime: number;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      setCount(Math.floor(progress * end));
+      
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [end, duration]);
+
+  return <span>{count}{suffix}</span>;
+};
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30">
-      {/* Background decoration */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-16">
+      {/* Clean Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-pulse-glow delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-10">
+      <div className="container mx-auto px-4 py-20 relative z-30">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
+          {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
               <Heart className="w-4 h-4 text-primary animate-heartbeat" />
-              <span className="text-sm font-medium text-primary">AI-Powered Prevention</span>
+              <span className="text-sm font-medium text-primary">AI-Powered Heart Protection</span>
             </div>
 
+            {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
-                Stop Heart Attacks Before They Happen
+                Protect the Hearts You Love
+                <span className="block text-3xl lg:text-5xl text-primary mt-2">
+                  Before It's Too Late
+                </span>
               </h1>
               <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl">
-                AI that predicts, prevents, and protects your heart — weeks before symptoms appear.
+                AI detects heart risks <span className="text-primary font-bold">21 days before symptoms</span>. 
+                Don't wait for emergencies. Prevent them.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all">
-                Get 3 Free Risk Reports
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                See How It Works
-              </Button>
+            {/* Key Stats */}
+            <div className="grid grid-cols-3 gap-4 p-6 bg-card rounded-2xl shadow-card">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">
+                  <AnimatedCounter end={21} /> days
+                </div>
+                <p className="text-xs text-muted-foreground">Early Warning</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-success">
+                  <AnimatedCounter end={30} />%
+                </div>
+                <p className="text-xs text-muted-foreground">Fewer Emergencies</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-primary">
+                  <AnimatedCounter end={10} />K+
+                </div>
+                <p className="text-xs text-muted-foreground">Families Protected</p>
+              </div>
             </div>
 
-            {/* Trust indicators */}
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all bg-primary hover:bg-primary/90">
+                <Shield className="w-5 h-5 mr-2" />
+                Protect My Family Now
+              </Button>
+              <VideoModal>
+                <Button variant="outline" size="lg" className="text-lg px-8">
+                  <Play className="w-5 h-5 mr-2" />
+                  See 2-Min Demo
+                </Button>
+              </VideoModal>
+            </div>
+
+            {/* Trust Indicators */}
             <div className="flex items-center gap-6 pt-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Activity className="w-4 h-4 text-success" />
                 <span>24/7 AI Monitoring</span>
               </div>
               <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4 text-success" />
-                <span>HIPAA Compliant</span>
+                <Users className="w-4 h-4 text-primary" />
+                <span>Doctor Approved</span>
               </div>
             </div>
           </div>
 
-          {/* Right image */}
+          {/* Right - App Video Preview */}
           <div className="relative animate-fade-in delay-300">
-            <div className="relative rounded-3xl overflow-hidden shadow-elevated">
-              <img
-                src={heroDashboard}
-                alt="CardioShield AI Dashboard showing heart stability score and real-time monitoring"
-                className="w-full h-auto"
-              />
-              {/* Overlay glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none" />
-            </div>
-            
-            {/* Floating stats */}
-            <div className="absolute -bottom-6 -left-6 bg-card p-6 rounded-2xl shadow-elevated border border-border animate-scale-in delay-500">
-              <div className="text-3xl font-bold text-primary">82</div>
-              <div className="text-sm text-muted-foreground">Heart Stability Score</div>
+            <div className="relative rounded-3xl overflow-hidden shadow-elevated bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
+              {/* App Video Demo */}
+              <div className="aspect-[4/3] bg-muted relative">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover rounded-3xl"
+                >
+                  <source src="/videos/app-demo.mp4" type="video/mp4" />
+                  {/* Fallback content */}
+                  <div className="w-full h-full flex items-center justify-center">
+                    <div className="text-center p-8">
+                      <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <Heart className="w-10 h-10 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">CardioShield App</h3>
+                      <p className="text-muted-foreground mb-4">Real-time heart protection dashboard</p>
+                      <div className="text-sm text-primary">
+                        Upload: public/videos/app-demo.mp4
+                      </div>
+                    </div>
+                  </div>
+                </video>
+                
+                {/* Play button overlay for user control */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
