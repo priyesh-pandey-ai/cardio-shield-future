@@ -18,7 +18,7 @@ const VideoModal = ({ children }: VideoModalProps) => {
       <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-black">
         <div className="relative aspect-video">
           <video
-            src="/howitworks.mp4"
+            src="/videos/howitworks.mp4"
             controls
             autoPlay
             className="w-full h-full"
