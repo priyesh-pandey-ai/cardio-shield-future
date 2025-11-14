@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useState } from "react";
 import { toast } from "sonner";
 import { ArrowRight, CheckCircle, Smartphone, Mail, Shield, Heart, Users, Clock, Zap } from "lucide-react";
+import SectionShell from "./SectionShell";
 
 const LeadForm = () => {
   const [formData, setFormData] = useState({
@@ -60,7 +61,7 @@ const LeadForm = () => {
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <SectionShell id="lead-form" tint="slate" contentClassName="space-y-12 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
@@ -237,7 +238,7 @@ const LeadForm = () => {
           </p>
         </div>
       </div>
-    </section>
+    </SectionShell>
   );
 };
 

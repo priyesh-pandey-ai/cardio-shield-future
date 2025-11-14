@@ -47,34 +47,34 @@ export function FlowDiagram() {
             description="Seamless onboarding with mobile-first experience"
             color="teal"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-teal-100 border border-teal-200 flex items-center justify-center">
-                    <Smartphone className="w-6 h-6 text-teal-600" strokeWidth={2} />
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-4 items-start">
+              <div className="space-y-2.5">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-11 h-11 rounded-2xl bg-teal-100 border border-teal-200 flex items-center justify-center">
+                    <Smartphone className="w-5 h-5 text-teal-600" strokeWidth={2} />
                   </div>
                   <div>
                     <h4 className="text-slate-900 leading-tight">Mobile Login</h4>
                     <p className="text-slate-600 text-xs">Quick sign-up via email or social auth</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center">
-                    <User className="w-6 h-6 text-emerald-600" strokeWidth={2} />
+                <div className="flex items-center gap-2.5">
+                  <div className="w-11 h-11 rounded-2xl bg-emerald-100 border border-emerald-200 flex items-center justify-center">
+                    <User className="w-5 h-5 text-emerald-600" strokeWidth={2} />
                   </div>
                   <div>
                     <h4 className="text-slate-900 leading-tight">Profile Creation</h4>
                     <p className="text-slate-600 text-xs">Basic demographics and health goals</p>
                   </div>
                 </div>
-                <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-3 border border-teal-200/50">
-                  <div className="flex items-center gap-2 text-xs text-slate-700">
+                <div className="bg-gradient-to-br from-teal-50 to-emerald-50 rounded-2xl p-2.5 border border-teal-200/50">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-700">
                     <CheckCircle2 className="w-4 h-4 text-teal-600" strokeWidth={2} />
                     <span>Account created in under 60 seconds</span>
                   </div>
                 </div>
               </div>
-              <div className="scale-95 origin-top">
+              <div className="origin-top mx-auto max-w-[320px] w-full">
                 <PhoneMockup screen="login" />
               </div>
             </div>
@@ -137,8 +137,8 @@ export function FlowDiagram() {
             description="Multi-source health data integration"
             color="teal"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-              <div className="bg-gradient-to-br from-slate-50 to-teal-50/30 rounded-2xl p-6 border border-slate-200">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div className="bg-gradient-to-br from-slate-50 to-teal-50/30 rounded-2xl p-5 border border-slate-200">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-14 h-14 rounded-2xl bg-white border border-teal-200 flex items-center justify-center shadow">
                     <Upload className="w-7 h-7 text-teal-600" strokeWidth={2} />
@@ -162,7 +162,7 @@ export function FlowDiagram() {
                 </div>
               </div>
 
-              <div className="scale-95 origin-top">
+              <div className="scale-[0.88] origin-top">
                 <WearableSync />
               </div>
             </div>
@@ -215,7 +215,7 @@ export function FlowDiagram() {
                 </div>
               </div>
 
-              <div className="lg:col-span-3 scale-95 origin-top">
+              <div className="lg:col-span-3 scale-[0.88] origin-top">
                 <NeuralNetwork />
               </div>
             </div>
@@ -277,12 +277,12 @@ export function FlowDiagram() {
             description="Daily nudges and actionable health recommendations"
             color="emerald"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">
-              <div className="scale-95 origin-top">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+              <div className="scale-[0.88] origin-top">
                 <PhoneMockup screen="dashboard" />
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="bg-white rounded-2xl p-4 border-2 border-teal-200 shadow-lg">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
@@ -345,7 +345,7 @@ export function FlowDiagram() {
             color="gradient"
             highlight
           >
-            <div className="flex items-center justify-center scale-95 origin-top">
+            <div className="flex items-center justify-center scale-[0.88] origin-top">
               <HeartOutcome />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
@@ -427,7 +427,8 @@ export function FlowDiagram() {
   const measureHeight = () => {
     const currentSlide = slideRefs.current[currentIndex];
     if (currentSlide) {
-      setCarouselHeight(currentSlide.offsetHeight);
+      const rect = currentSlide.getBoundingClientRect();
+      setCarouselHeight(rect.height);
     }
   };
 
@@ -441,15 +442,29 @@ export function FlowDiagram() {
   });
 
   useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      measureHeight();
+    });
+
+    slideRefs.current.forEach((ref) => {
+      if (ref) resizeObserver.observe(ref);
+    });
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [currentIndex]);
+
+  useEffect(() => {
     const id = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 3000);
+    }, 3500);
     return () => clearInterval(id);
   }, [totalSlides]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-8 py-20">
-      <div className="text-center mb-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12">
+      <div className="text-center mb-10">
         <div className="inline-flex items-center gap-4 mb-6">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-3xl blur-xl opacity-30" />
@@ -459,13 +474,10 @@ export function FlowDiagram() {
           </div>
           <div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-slate-900">CardioShield</h1>
-            <p className="text-teal-600 mt-1 text-lg">AI-Powered Preventive Cardiology</p>
+            <p className="text-teal-600 mt-1 text-base">AI-Powered Preventive Cardiology</p>
           </div>
         </div>
-        <h2 className="text-3xl md:text-4xl text-slate-900 mb-3">How CardioShield Works</h2>
-        <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-          Explore every layer of the experience without scrolling endlessly—flip through the journey at your own pace.
-        </p>
+        <h2 className="text-2xl md:text-3xl text-slate-900">How CardioShield Works</h2>
       </div>
 
       <div className="bg-white/80 border border-slate-200 rounded-3xl p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)]">
@@ -500,7 +512,7 @@ export function FlowDiagram() {
         </div>
       </div>
 
-      <div className="relative mt-12">
+      <div className="relative mt-8">
         <div
           className="overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white/80 shadow-[0_20px_60px_rgba(15,23,42,0.12)] transition-[height] duration-500 ease-in-out"
           style={{ height: carouselHeight }}
@@ -510,21 +522,27 @@ export function FlowDiagram() {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {slides.map((slide, idx) => (
-              <div
-                key={slide.id}
-                className="w-full flex-shrink-0 px-2 sm:px-8 py-4"
-                ref={(el) => {
-                  slideRefs.current[idx] = el;
-                }}
-              >
-                {slide.node}
+              <div key={slide.id} className="w-full flex-shrink-0 px-1 sm:px-4 py-2">
+                <div
+                  className="origin-top mx-auto"
+                  style={{
+                    transform: "scale(0.88)",
+                    transformOrigin: "top center",
+                    maxWidth: "110%",
+                  }}
+                  ref={(el) => {
+                    slideRefs.current[idx] = el;
+                  }}
+                >
+                  {slide.node}
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-6">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div className="mt-4 flex flex-col gap-3">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2.5">
             <div className="flex flex-wrap gap-2">
               {slides.map((slide, idx) => (
                 <button
@@ -566,7 +584,7 @@ export function FlowDiagram() {
             </div>
           </div>
 
-          <div className="flex justify-center gap-2">
+          <div className="flex justify-center gap-1.5">
             {slides.map((slide, idx) => (
               <button
                 key={`${slide.id}-dot`}
@@ -579,17 +597,6 @@ export function FlowDiagram() {
             ))}
           </div>
         </div>
-      </div>
-
-      <div className="text-center mt-20 pt-10 border-t border-slate-200">
-        <div className="flex items-center justify-center gap-3 mb-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center">
-            <Heart className="w-6 h-6 text-white" fill="white" strokeWidth={2} />
-          </div>
-          <p className="text-slate-900 text-lg font-semibold">CardioShield</p>
-        </div>
-        <p className="text-slate-600">Premium AI-Powered Preventive Cardiology Platform</p>
-        <p className="text-slate-500 text-sm mt-2">Clinically validated - Data-driven - Personalized care</p>
       </div>
     </div>
   );

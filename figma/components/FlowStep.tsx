@@ -40,12 +40,12 @@ export function FlowStep({ number, title, description, children, color, highligh
   };
 
   return (
-    <div className="relative mb-4">
+    <div className="relative mb-3 min-h-[360px]">
       {highlight && (
         <div className="absolute inset-0 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-3xl blur-2xl opacity-10"></div>
       )}
       <div className={`
-        relative rounded-3xl p-6 sm:p-8 lg:p-10
+        relative rounded-[22px] p-5 sm:p-6 lg:p-7
         ${getBgClass()}
         ${getBorderClass()}
         ${highlight ? 'shadow-2xl shadow-teal-500/20' : 'shadow-xl'}

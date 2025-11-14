@@ -7,12 +7,12 @@ interface PhoneMockupProps {
 
 export function PhoneMockup({ screen }: PhoneMockupProps) {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center w-full">
       <div className="relative">
         {/* Phone frame */}
-        <div className="w-72 h-[600px] bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3.5rem] p-3 shadow-2xl">
+        <div className="w-60 h-[520px] bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-3 shadow-2xl">
           {/* Screen */}
-          <div className="w-full h-full bg-white rounded-[3rem] overflow-hidden relative">
+          <div className="w-full h-full bg-white rounded-[2.6rem] overflow-hidden relative">
             {/* Notch */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-7 bg-slate-900 rounded-b-3xl z-10"></div>
             
