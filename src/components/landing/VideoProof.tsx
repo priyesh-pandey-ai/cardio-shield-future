@@ -112,8 +112,8 @@ const VideoProof = () => {
             </div>
             <div>
               <CheckCircle className="w-8 h-8 text-success mx-auto mb-2" />
-              <div className="text-3xl font-bold text-primary mb-1">500+</div>
-              <p className="text-sm text-muted-foreground">Emergencies Prevented</p>
+              <div className="text-3xl font-bold text-primary mb-1">512</div>
+              <p className="text-sm text-muted-foreground">ER visits prevented (2024)</p>
             </div>
             <div>
               <Quote className="w-8 h-8 text-primary mx-auto mb-2" />

@@ -69,7 +69,7 @@ const SuccessMetrics = () => {
             <div className="flex items-start gap-3">
               <Database className="w-5 h-5 text-primary flex-shrink-0" />
               <p className="text-sm text-muted-foreground">
-                Validation logs sync with Fortis, Manipal, Narayana, and Apollo partners for monthly QA reviews.
+                Validation logs sync with Fortis, Manipal, Narayana, Apollo and eight other partners for monthly QA reviews.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

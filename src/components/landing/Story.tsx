@@ -45,16 +45,16 @@ const Story = () => {
 
           <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
             <div>
-              <div className="text-3xl font-bold text-primary">3,840+</div>
-              <div className="text-sm text-muted-foreground">ER nights avoided</div>
+              <div className="text-3xl font-bold text-primary">512</div>
+              <div className="text-sm text-muted-foreground">ER visits prevented in 2024</div>
+            </div>
+            <div>
+              <div className="text-3xl font-bold text-primary">₹12L</div>
+              <div className="text-sm text-muted-foreground">Average hospital bill saved per family</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">6 min</div>
-              <div className="text-sm text-muted-foreground">Clinician response time</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-primary">12</div>
-              <div className="text-sm text-muted-foreground">Hospital partners auditing</div>
+              <div className="text-sm text-muted-foreground">Clinician escalation time</div>
             </div>
           </div>
         </div>
