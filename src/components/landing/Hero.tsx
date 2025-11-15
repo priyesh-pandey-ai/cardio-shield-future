@@ -51,7 +51,7 @@ const Hero = () => {
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
-                Skip the ER.
+                Skip the hospital.
                 <span className="block text-3xl lg:text-5xl text-primary mt-2">
                   CardioShield intercepts heart trouble before hospitals get involved.
                 </span>
