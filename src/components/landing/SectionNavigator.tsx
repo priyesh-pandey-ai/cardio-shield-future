@@ -4,11 +4,15 @@ import { cn } from "@/lib/utils";
 const sections = [
   { id: "hero", label: "Hero" },
   { id: "how-it-works", label: "How It Works" },
-  { id: "story", label: "Story" },
-  { id: "ai-advantage", label: "AI Advantage" },
-  { id: "testimonials", label: "Trust" },
+  { id: "wearables", label: "Wearables" },
+  { id: "ai-advantage", label: "AI Insights" },
+  { id: "risk-calculator", label: "Risk Check" },
+  { id: "hospital-impact", label: "Outcomes" },
+  { id: "clinician-trust", label: "Clinicians" },
+  { id: "testimonials", label: "Families" },
   { id: "pricing", label: "Pricing" },
-  { id: "lead-form", label: "Get Started" },
+  { id: "faq", label: "FAQ" },
+  { id: "lead-form", label: "Contact" },
 ];
 
 const SectionNavigator = () => {

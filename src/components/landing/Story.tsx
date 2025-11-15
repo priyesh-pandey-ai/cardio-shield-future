@@ -26,35 +26,35 @@ const Story = () => {
               That is what they told my family when my dad collapsed at his desk. 52 years old, "perfectly healthy," according to his last checkup 6 months ago.
             </p>
             <p className="text-muted-foreground">
-              But it was not sudden at all. Looking back, we saw the signs: his blood pressure creeping up, skipping his evening walks because of work stress, not sleeping well. His smartwatch had all this data. Nobody connected the dots.
+              But it was not sudden at all. Looking back, we saw the signs: his blood pressure creeping up, skipping his evening walks because of work stress, not sleeping well. His smartwatch had all this data. Nobody connected the dots. We only realised it while pacing the ICU hallway.
             </p>
             <p className="text-muted-foreground">
-              <span className="font-semibold text-foreground">Here is the uncomfortable truth:</span> hospitals make money when you are sick. Insurance pays for surgeries, not prevention. The system is broken.
+              <span className="font-semibold text-foreground">Here is the uncomfortable truth:</span> hospitals make money when you are sick. Insurance pays for surgeries, not prevention. Nobody is rewarded for keeping you out of a hospital bed.
             </p>
-            <p className="text-xl font-medium text-foreground">So we built the thing that could have saved my dad.</p>
+            <p className="text-xl font-medium text-foreground">So we built CardioShield to end the "rush to ER" story arc.</p>
             <p className="text-muted-foreground">
-              CardioShield watches all those little signs -- the ones doctors miss between visits. It connects the dots that no human has time to connect. It gives you the warnings my dad never got.
+              CardioShield watches every micro-shift doctors miss between visits and tells your care circle exactly what to do. Families get a heads-up and a care protocol long before the ECG machines and paperwork start.
             </p>
           </div>
 
           <div className="pt-2">
             <Button size="lg" className="text-lg px-8">
-              Do not wait for warning signs -- get AI protection
+              Keep my family out of the hospital
             </Button>
           </div>
 
           <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
             <div>
-              <div className="text-3xl font-bold text-primary">30%</div>
-              <div className="text-sm text-muted-foreground">Fewer Emergencies</div>
+              <div className="text-3xl font-bold text-primary">3,840+</div>
+              <div className="text-sm text-muted-foreground">ER nights avoided</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">10M+</div>
-              <div className="text-sm text-muted-foreground">Data Points</div>
+              <div className="text-3xl font-bold text-primary">6 min</div>
+              <div className="text-sm text-muted-foreground">Clinician response time</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-muted-foreground">AI Protection</div>
+              <div className="text-3xl font-bold text-primary">12</div>
+              <div className="text-sm text-muted-foreground">Hospital partners auditing</div>
             </div>
           </div>
         </div>

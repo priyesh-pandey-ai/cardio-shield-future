@@ -1,12 +1,17 @@
 import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
 import Story from "@/components/landing/Story";
+import WearableSupport from "@/components/landing/WearableSupport";
 import AIAdvantage from "@/components/landing/AIAdvantage";
 import FigmaFlowSection from "@/components/landing/FigmaFlowSection";
+import SuccessMetrics from "@/components/landing/SuccessMetrics";
 import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
 import LeadForm from "@/components/landing/LeadForm";
-import SectionNavigator from "@/components/landing/SectionNavigator";
+import VideoProof from "@/components/landing/VideoProof";
+import ClinicianTrust from "@/components/landing/ClinicianTrust";
+import FAQ from "@/components/landing/FAQ";
+import RiskCalculator from "@/components/landing/RiskCalculator";
 
 const Index = () => {
   return (
@@ -17,13 +22,18 @@ const Index = () => {
       <div className="relative z-10 space-y-0">
         <Navigation />
         <Hero />
+        <SuccessMetrics />
         <FigmaFlowSection />
         <Story />
+        <WearableSupport />
         <AIAdvantage />
+        <RiskCalculator />
+        <VideoProof />
         <Testimonials />
+        <ClinicianTrust />
         <Pricing />
         <LeadForm />
-        <SectionNavigator />
+        <FAQ />
       </div>
     </main>
   );

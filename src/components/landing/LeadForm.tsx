@@ -66,10 +66,11 @@ const LeadForm = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            Your Heart Protection Journey Starts Here
+            Your hospital-avoidance plan starts now
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Sign up takes 30 seconds. Within 5 minutes, you'll get your first AI risk report. No credit card required.
+            Share three basics, connect your wearable, and within 5 minutes you'll know if you're trending toward an ER
+            visit — and exactly how to reverse it.
           </p>
         </div>
 

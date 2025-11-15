@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Activity, Play, Shield, Users, TrendingDown } from "lucide-react";
+import { Heart, Activity, Play, Shield, TrendingDown } from "lucide-react";
 import VideoModal from "./VideoModal";
 import { useState, useEffect } from "react";
 
@@ -45,20 +45,20 @@ const Hero = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
               <Heart className="w-4 h-4 text-primary animate-heartbeat" />
-              <span className="text-sm font-medium text-primary">AI-Powered Heart Protection</span>
+              <span className="text-sm font-medium text-primary">Avoid Emergency Rooms</span>
             </div>
 
             {/* Main Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground">
-                Protect the Hearts You Love
+                Skip the ER.
                 <span className="block text-3xl lg:text-5xl text-primary mt-2">
-                  Before It's Too Late
+                  CardioShield intercepts heart trouble before hospitals get involved.
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl">
-                AI detects heart risks <span className="text-primary font-bold">21 days before symptoms</span>. 
-                Don't wait for emergencies. Prevent them.
+                Every vital, lab report, and lifestyle signal is converted into a hospital-avoidance plan. Families
+                receive actionable alerts weeks before they would otherwise be rushing for an admission.
               </p>
             </div>
 
@@ -66,21 +66,21 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-4 p-6 bg-card rounded-2xl shadow-card">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">
-                  <AnimatedCounter end={21} /> days
+                  <AnimatedCounter end={512} />
                 </div>
-                <p className="text-xs text-muted-foreground">Early Warning</p>
+                <p className="text-xs text-muted-foreground">ER trips avoided in 2024</p>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-success">
-                  <AnimatedCounter end={30} />%
+                <div className="text-2xl font-bold text-destructive">
+                  ₹<AnimatedCounter end={12} suffix="L" />
                 </div>
-                <p className="text-xs text-muted-foreground">Fewer Emergencies</p>
+                <p className="text-xs text-muted-foreground">Average hospital bill saved per alert</p>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">
-                  <AnimatedCounter end={10} />K+
+                <div className="text-2xl font-bold text-amber-600">
+                  <AnimatedCounter end={89} suffix="%" />
                 </div>
-                <p className="text-xs text-muted-foreground">Families Protected</p>
+                <p className="text-xs text-muted-foreground">Alerts resolved before hospital care</p>
               </div>
             </div>
 
@@ -88,12 +88,12 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all bg-primary hover:bg-primary/90">
                 <Shield className="w-5 h-5 mr-2" />
-                Protect My Family Now
+                Keep Us Out of Hospital
               </Button>
               <VideoModal>
                 <Button variant="outline" size="lg" className="text-lg px-8">
                   <Play className="w-5 h-5 mr-2" />
-                  See 2-Min Demo
+                  Watch Prevention Story
                 </Button>
               </VideoModal>
             </div>
@@ -101,12 +101,12 @@ const Hero = () => {
             {/* Trust Indicators */}
             <div className="flex items-center gap-6 pt-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4 text-success" />
-                <span>24/7 AI Monitoring</span>
+                <TrendingDown className="w-4 h-4 text-destructive" />
+                <span>₹12L average ER bill avoided per family</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4 text-primary" />
-                <span>Doctor Approved</span>
+                <Activity className="w-4 h-4 text-primary" />
+                <span>Clinicians intervene before ambulances are needed</span>
               </div>
             </div>
           </div>
