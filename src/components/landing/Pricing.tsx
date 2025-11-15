@@ -3,49 +3,60 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Check, Shield, Heart, Star } from "lucide-react";
 import SectionShell from "./SectionShell";
 
+const rupee = "\u20B9";
+
 const plans = [
   {
-    name: "Individual Protection",
+    name: "Beta Charter Plan",
     price: "INR 1,199",
-    period: "/month",
-    description: "Essential AI monitoring for you",
+    period: "/month (3-month beta)",
+    description: "One flat membership that keeps you out of the hospital",
     features: [
-      "Real-time AI heart monitoring",
-      "Weekly risk reports and insights",
-      "Smartwatch and fitness tracker sync",
-      "Mobile app with alerts",
-      "Email support",
+      "Full AI prevention stack + clinician review",
+      "Wearable + lab syncing included",
+      "6-minute escalation to your care circle",
+      "Family-ready playbooks and WhatsApp updates",
+      "30-day money-back guarantee",
+      "Cancel anytime - zero hidden fees",
     ],
-    cta: "Start Free Trial",
-    popular: false,
-  },
-  {
-    name: "Family Protection",
-    price: "INR 1,599",
-    period: "/month",
-    description: "Complete protection for your entire family",
-    features: [
-      "Everything in Individual, plus:",
-      "Up to 5 family members",
-      "Quarterly diagnostic tests",
-      "Doctor consultation and review",
-      "Priority phone support",
-      "Family health dashboard",
-    ],
-    cta: "Protect My Family",
+    cta: "Join the Beta Cohort",
     popular: true,
   },
 ];
 
 const Pricing = () => {
   return (
-    <SectionShell id="pricing" tint="amber" contentClassName="space-y-10 bg-gradient-to-b from-white to-amber-50/40">
+    <SectionShell id="pricing" tint="amber" contentClassName="space-y-8 bg-gradient-to-b from-white to-amber-50/40">
       <div className="text-center space-y-4 animate-fade-in-up">
         <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">Pricing</p>
-        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Prevention costs less than regret</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          For less than your daily coffee, get 24/7 AI protection that could save your life and your savings.
+        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Our pricing proves whose side we're on</h2>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Traditional cardiology makes its money in crisis. We built CardioShield to profit only when you stay healthy,
+          on a predictable, transparent subscription that removes the conflict of interest.
         </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto animate-fade-in-up">
+        <div className="rounded-3xl border border-destructive/30 bg-gradient-to-b from-rose-50 to-white p-8 text-center shadow-lg">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-destructive/80 mb-3">The Old Way</p>
+          <div className="text-4xl font-bold text-destructive mb-1">{rupee}2,00,000</div>
+          <p className="text-base font-medium text-slate-700">One angioplasty. One catastrophic failure.</p>
+          <div className="mt-6 space-y-3 text-sm text-muted-foreground">
+            <p>They win only when you lose and land in a cath lab.</p>
+            <p>Reactive care priced like a one-time bailout of your life savings.</p>
+            <p>Incentives misaligned with your long-term heart health.</p>
+          </div>
+        </div>
+        <div className="rounded-3xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-8 text-center shadow-xl">
+          <p className="text-xs font-semibold tracking-[0.3em] uppercase text-success/80 mb-3">Our Way</p>
+          <div className="text-4xl font-bold text-success mb-1">{rupee}1,199</div>
+          <p className="text-base font-medium text-slate-700">{rupee}1,199 per month - 3-month beta - All-inclusive AI prevention.</p>
+          <div className="mt-6 space-y-3 text-sm text-muted-foreground">
+            <p>We earn the same flat fee whether you need zero interventions or ten.</p>
+            <p>Aligned incentives: we only succeed when you stay out of the hospital.</p>
+            <p>Transparent, fixed pricing that keeps you proactive rather than panicked.</p>
+          </div>
+        </div>
       </div>
 
       <div className="p-8 bg-white border border-amber-200 rounded-3xl shadow-lg max-w-4xl mx-auto animate-fade-in-up delay-150">
@@ -56,16 +67,16 @@ const Pricing = () => {
             <p className="text-sm text-muted-foreground">Average emergency cost</p>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary mb-2">INR 12,388</div>
-            <p className="text-sm text-muted-foreground">CardioShield yearly cost</p>
+            <div className="text-3xl font-bold text-primary mb-2">INR 14,388</div>
+            <p className="text-sm text-muted-foreground">CardioShield yearly cost ({rupee}1,199 x 12)</p>
           </div>
           <div>
-            <div className="text-3xl font-bold text-success mb-2">INR 11,87,612</div>
+            <div className="text-3xl font-bold text-success mb-2">INR 11,85,612</div>
             <p className="text-sm text-muted-foreground">Potential savings year one</p>
           </div>
         </div>
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          <span className="font-semibold text-success">Over 8,000% ROI</span> if you prevent just one emergency.
+          <span className="font-semibold text-success">~8,300% ROI</span> if you prevent just one emergency.
         </p>
       </div>
 
@@ -124,6 +135,10 @@ const Pricing = () => {
         </div>
         <p className="text-lg text-muted-foreground">
           Start with <span className="font-semibold text-primary">three free AI reports</span> -- no card required.
+        </p>
+        <p className="text-base text-slate-600">
+          This pricing isn't just a number - it's a moral argument:{" "}
+          <span className="font-semibold text-slate-900">we profit only when you stay healthy; they profit only when you get sick.</span>
         </p>
       </div>
     </SectionShell>

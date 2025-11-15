@@ -392,8 +392,8 @@ export function FlowDiagram() {
                 <h4 className="text-slate-900 mb-2">Subscription Tiers</h4>
                 <p className="text-slate-600 text-xs mb-3">Basic, Premium, Enterprise plans</p>
                 <div className="space-y-1.5">
-                  <div className="bg-white rounded-lg p-2 text-xs text-slate-700 border border-teal-200">INR 1,499/mo - Basic</div>
-                  <div className="bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg p-2 text-xs text-white shadow-lg">INR 1,999/mo - Premium</div>
+                  <div className="bg-white rounded-lg p-2 text-xs text-slate-700 border border-teal-200">₹1,199/mo - Beta</div>
+                  <div className="bg-gradient-to-r from-teal-500 to-emerald-500 rounded-lg p-2 text-xs text-white shadow-lg">₹0 hidden fees or upsells</div>
                 </div>
               </div>
 
@@ -458,7 +458,7 @@ export function FlowDiagram() {
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalSlides);
-    }, 3500);
+    }, 6500);
     return () => clearInterval(id);
   }, [totalSlides]);
 

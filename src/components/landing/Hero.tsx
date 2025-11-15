@@ -13,9 +13,9 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; d
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      
+
       setCount(Math.floor(progress * end));
-      
+
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate);
       }
@@ -26,20 +26,30 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; d
     return () => cancelAnimationFrame(animationFrame);
   }, [end, duration]);
 
-  return <span>{count}{suffix}</span>;
+  return (
+    <span>
+      {count}
+      {suffix}
+    </span>
+  );
 };
+
+const rupee = "\u20B9";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-16">
+    <section
+      id="hero"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-b from-background to-muted/30 pt-12"
+    >
       {/* Clean Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-20 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-pulse-glow delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 py-20 relative z-30">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-12 relative z-30">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
             {/* Badge */}
@@ -72,7 +82,8 @@ const Hero = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-destructive">
-                  ₹<AnimatedCounter end={12} suffix="L" />
+                  {rupee}
+                  <AnimatedCounter end={12} suffix="L" />
                 </div>
                 <p className="text-xs text-muted-foreground">Average hospital bill saved per alert</p>
               </div>
@@ -102,7 +113,7 @@ const Hero = () => {
             <div className="flex items-center gap-6 pt-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <TrendingDown className="w-4 h-4 text-destructive" />
-                <span>₹12L average ER bill avoided per family</span>
+                <span>{rupee}12L average ER bill avoided per family</span>
               </div>
               <div className="flex items-center gap-2">
                 <Activity className="w-4 h-4 text-primary" />
@@ -116,13 +127,7 @@ const Hero = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-elevated bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
               {/* App Video Demo */}
               <div className="aspect-[4/3] bg-muted relative">
-                <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover rounded-3xl"
-                >
+                <video autoPlay muted loop playsInline className="w-full h-full object-cover rounded-3xl">
                   <source src="/videos/app-demo.mp4" type="video/mp4" />
                   {/* Fallback content */}
                   <div className="w-full h-full flex items-center justify-center">
@@ -132,13 +137,11 @@ const Hero = () => {
                       </div>
                       <h3 className="text-xl font-semibold text-foreground mb-2">CardioShield App</h3>
                       <p className="text-muted-foreground mb-4">Real-time heart protection dashboard</p>
-                      <div className="text-sm text-primary">
-                        Upload: public/videos/app-demo.mp4
-                      </div>
+                      <div className="text-sm text-primary">Upload: public/videos/app-demo.mp4</div>
                     </div>
                   </div>
                 </video>
-                
+
                 {/* Play button overlay for user control */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">

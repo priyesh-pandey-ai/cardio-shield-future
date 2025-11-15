@@ -1,3 +1,4 @@
+import { FlowDiagram } from "../../../figma/components/FlowDiagram";
 import {
   Check,
   X,
@@ -6,7 +7,6 @@ import {
   Clock,
   DollarSign,
   Shield,
-  Play,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import SectionShell from "./SectionShell";
@@ -44,7 +44,7 @@ const AIAdvantage = () => {
     <SectionShell
       id="ai-advantage"
       tint="teal"
-      contentClassName="space-y-12 bg-gradient-to-b from-white/95 to-white"
+      contentClassName="space-y-8 bg-gradient-to-b from-white/95 to-white"
     >
       <div className="text-center space-y-4 animate-fade-in-up">
         <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">
@@ -104,54 +104,8 @@ const AIAdvantage = () => {
         </Card>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <Card className="text-center p-6 border-border animate-fade-in-up delay-200">
-          <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Brain className="w-8 h-8 text-primary" />
-          </div>
-          <h4 className="text-lg font-semibold text-foreground mb-2">Deep learning AI</h4>
-          <p className="text-sm text-muted-foreground">
-            Trained on 10M+ clinical data points for Indian families.
-          </p>
-        </Card>
-
-        <Card className="text-center p-6 border-border animate-fade-in-up delay-300">
-          <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Activity className="w-8 h-8 text-success" />
-          </div>
-          <h4 className="text-lg font-semibold text-foreground mb-2">Real-time analysis</h4>
-          <p className="text-sm text-muted-foreground">
-            Watches heart rate, sleep, stress and lifestyle signals in one place.
-          </p>
-        </Card>
-
-        <Card className="text-center p-6 border-border animate-fade-in-up delay-400">
-          <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Shield className="w-8 h-8 text-accent" />
-          </div>
-          <h4 className="text-lg font-semibold text-foreground mb-2">Predictive alerts</h4>
-          <p className="text-sm text-muted-foreground">
-            Sends escalations up to 21 days before a likely cardiac event.
-          </p>
-        </Card>
-      </div>
-
-      <div className="bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-10 max-w-4xl mx-auto animate-fade-in-up delay-500">
-        <div className="text-center mb-8">
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">See AI in action</h3>
-          <p className="text-muted-foreground">
-            Watch how CardioShield analyzes raw wearable, lab, and lifestyle data.
-          </p>
-        </div>
-        <div className="aspect-video rounded-2xl border border-slate-100 bg-gradient-to-br from-primary/5 to-emerald-50 flex items-center justify-center group cursor-pointer">
-          <div className="text-center space-y-3">
-            <div className="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center mx-auto group-hover:scale-110 transition">
-              <Play className="w-9 h-9" />
-            </div>
-            <h4 className="text-xl font-semibold text-slate-900">3 minute AI demo</h4>
-            <p className="text-muted-foreground text-sm">From raw signals to risk prediction</p>
-          </div>
-        </div>
+      <div className="bg-white rounded-[30px] border border-slate-100 shadow-[0_30px_80px_rgba(15,23,42,0.15)] overflow-hidden">
+        <FlowDiagram />
       </div>
 
       <div className="text-center space-y-3 animate-fade-in-up delay-600">

@@ -5,14 +5,13 @@ import { cn } from "@/lib/utils";
 
 const sections = [
   { label: "Hero", id: "hero", showInNav: false },
-  { label: "How It Works", id: "how-it-works", showInNav: true },
-  { label: "Wearables", id: "wearables", showInNav: true },
-  { label: "AI Insights", id: "ai-advantage", showInNav: true },
-  { label: "Hospital Impact", id: "hospital-impact", showInNav: true },
+  { label: "Story", id: "story", showInNav: true },
+  { label: "Social Proof", id: "testimonials", showInNav: true },
+  { label: "AI Advantage", id: "ai-advantage", showInNav: true },
   { label: "Pricing", id: "pricing", showInNav: true },
-  { label: "Clinician Trust", id: "clinician-trust", showInNav: true },
+  { label: "Hospital Impact", id: "hospital-impact", showInNav: true },
+  { label: "Wearables", id: "wearables", showInNav: true },
   { label: "FAQ", id: "faq", showInNav: true },
-  { label: "Contact", id: "lead-form", showInNav: true },
 ];
 
 const Navigation = () => {

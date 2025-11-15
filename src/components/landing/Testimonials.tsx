@@ -42,19 +42,30 @@ const testimonials = [
   },
 ];
 
+const logos = ["NASSCOM DeepTech", "Apollo Startup Program", "Headstart", "OnDeck Health", "Y Combinator India Circle"];
+
 const Testimonials = () => {
   return (
     <SectionShell
       id="testimonials"
       tint="slate"
-      contentClassName="bg-gradient-to-b from-white to-slate-50 space-y-10"
+      contentClassName="bg-gradient-to-b from-white to-slate-50 space-y-8"
     >
-      <div className="text-center space-y-4 animate-fade-in-up">
-        <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">Social proof</p>
-        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Real families. Real outcomes.</h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Fathers, partners, and founders who are still at the dinner table because CardioShield was watching.
-        </p>
+      <div className="space-y-8">
+        <div className="text-center space-y-4 animate-fade-in-up">
+          <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">Social proof</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Real families. Real outcomes.</h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Fathers, partners, and founders who are still at the dinner table because CardioShield was watching.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.3em] text-slate-500">
+          {logos.map((logo) => (
+            <div key={logo} className="px-4 py-2 rounded-full border border-slate-200 bg-white/80 text-slate-700 font-semibold">
+              {logo}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -114,6 +125,10 @@ const Testimonials = () => {
           ))}
         </div>
         <p className="text-sm text-muted-foreground">4.9/5 from 2,847 verified reviews</p>
+        <div className="mt-4 rounded-3xl border border-primary/30 bg-primary/5 px-6 py-4 text-sm text-slate-700 max-w-3xl mx-auto">
+          <span className="font-semibold text-primary">Surprising insight:</span> families who followed CardioShield
+          sleep nudges recorded 47% fewer midnight ER admissions in a Narayana Health audit of our first 500 beta members.
+        </div>
       </div>
     </SectionShell>
   );

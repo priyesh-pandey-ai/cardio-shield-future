@@ -1,11 +1,13 @@
 import SectionShell from "./SectionShell";
-import { Shield, Lock, Database, CheckCircle, TrendingDown, Hospital, ShieldCheck, Timer } from "lucide-react";
+import { Shield, Lock, Database, CheckCircle, TrendingDown, ShieldCheck, Timer } from "lucide-react";
+
+const rupee = "\u20B9";
 
 const metricCards = [
-  { value: "512", label: "ER visits prevented in 2024", icon: Hospital, color: "text-destructive" },
-  { value: "₹12L", label: "Average hospital bill avoided per alert", icon: TrendingDown, color: "text-primary" },
-  { value: "89%", label: "Alerts resolved before hospital care", icon: ShieldCheck, color: "text-success" },
-  { value: "6 min", label: "Clinician escalation time", icon: Timer, color: "text-amber-600" },
+  { value: "21 days", label: "Average warning window before ER risk", icon: Timer, color: "text-primary" },
+  { value: "32 signals", label: "Wearable, lab, and lifestyle feeds analyzed", icon: Database, color: "text-success" },
+  { value: "6 min", label: "Clinician escalation time", icon: ShieldCheck, color: "text-emerald-600" },
+  { value: `${rupee}1,199`, label: "Flat beta membership - zero upsells", icon: TrendingDown, color: "text-amber-600" },
 ];
 
 const trustBadges = [
@@ -22,7 +24,7 @@ const SuccessMetrics = () => {
     <SectionShell
       id="hospital-impact"
       tint="slate"
-      contentClassName="space-y-12 bg-gradient-to-b from-white via-white to-slate-50"
+      contentClassName="space-y-8 bg-gradient-to-b from-white via-white to-slate-50"
     >
       <div className="text-center space-y-4">
         <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">Hospital impact</p>
@@ -30,8 +32,8 @@ const SuccessMetrics = () => {
           We measure success by how rarely you visit a hospital
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          These are the numbers our clinicians obsess over every week — ER trips avoided, rupees saved, and how
-          quickly we neutralize an alert before it reaches the admissions desk.
+          These are the guardrails we hold ourselves to: long warning windows, dense data coverage, human escalation
+          measured in minutes, and a single transparent price.
         </p>
       </div>
 
@@ -53,23 +55,29 @@ const SuccessMetrics = () => {
             <p className="text-sm uppercase tracking-[0.3em] text-primary">Independent validation</p>
             <h3 className="text-2xl font-semibold text-slate-900">Journal of Preventive Cardiology, 2024</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">
-                AI-based early detection reduces emergency cardiac admissions by 30%.
-              </span>{" "}
-              Study of 10,847 Indian users across 12 hospitals shows CardioShield prevents 3 out of 10 emergencies
-              through early warnings + lifestyle interventions.
+              CardioShield's AI cut emergency cardiac admissions by 30% for 10,847 Indian users across 12 hospitals,
+              preventing 3 of every 10 potential emergencies through early warnings paired with lifestyle protocols.
             </p>
-            <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
-              <span>Peer-reviewed: 2024</span>
-              <span>Sample size: 10,847</span>
-              <span>Data sources: wearables + labs</span>
+            <div className="grid sm:grid-cols-3 gap-3 text-xs text-muted-foreground">
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-3">
+                <p className="font-semibold text-slate-900">Peer-reviewed</p>
+                <p>2024</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-3">
+                <p className="font-semibold text-slate-900">Sample size</p>
+                <p>10,847 users</p>
+              </div>
+              <div className="rounded-2xl border border-slate-200 bg-white/80 p-3">
+                <p className="font-semibold text-slate-900">Data sources</p>
+                <p>Wearables + labs</p>
+              </div>
             </div>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-3">
             <div className="flex items-start gap-3">
               <Database className="w-5 h-5 text-primary flex-shrink-0" />
               <p className="text-sm text-muted-foreground">
-                Validation logs sync with Fortis, Manipal, Narayana, Apollo and eight other partners for monthly QA reviews.
+                Validation logs sync monthly with Fortis, Manipal, Narayana, Apollo and eight other partner hospitals.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -91,7 +99,7 @@ const SuccessMetrics = () => {
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-destructive">Without CardioShield</p>
           <ul className="space-y-3 text-sm text-slate-600">
             <li>- Symptoms show up late, often inside the ER waiting room.</li>
-            <li>- Families scramble for ₹10–15L to pay for emergency surgery.</li>
+            <li>- Families scramble for {rupee}10-15L to pay for emergency surgery.</li>
             <li>- Doctors only see a snapshot of your vitals once or twice a year.</li>
           </ul>
           <p className="text-xs text-muted-foreground">Source: retrospective studies across 12 tertiary hospitals.</p>
@@ -101,7 +109,7 @@ const SuccessMetrics = () => {
           <ul className="space-y-3 text-sm text-slate-700">
             <li>- Wearable + lab data surfaces risk at least 3 weeks before an ER visit.</li>
             <li>- Clinicians call you within 6 minutes of an Amber alert to course-correct.</li>
-            <li>- 89% of alerts are closed with lifestyle adjustments — no hospital beds, no IV drips.</li>
+            <li>- 89% of alerts are closed with lifestyle adjustments - no hospital beds, no IV drips.</li>
           </ul>
           <p className="text-xs text-muted-foreground">CardioShield Operations Report, Q3 FY25.</p>
         </div>

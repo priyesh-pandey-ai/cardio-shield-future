@@ -79,7 +79,7 @@ const LeadForm = () => {
           <h3 className="text-2xl font-bold text-center mb-8 text-foreground">
             Your Welcome Journey - 5 Minutes to Protection
           </h3>
-          
+
           {/* Flow Visualization */}
           <div className="grid md:grid-cols-4 gap-6 mb-8">
             {flowSteps.map((step, index) => (
@@ -101,7 +101,7 @@ const LeadForm = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Arrow Connector */}
                 {index < flowSteps.length - 1 && (
                   <div className="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-primary">
@@ -131,7 +131,7 @@ const LeadForm = () => {
               No credit card required. See your risk scores immediately.
             </p>
           </Card>
-          
+
           <Card className="text-center p-6 border-success/20 bg-success/5">
             <Users className="w-8 h-8 text-success mx-auto mb-3" />
             <h4 className="font-semibold text-foreground mb-2">Family Access</h4>
@@ -139,7 +139,7 @@ const LeadForm = () => {
               Add up to 5 family members. Protect everyone you love.
             </p>
           </Card>
-          
+
           <Card className="text-center p-6 border-accent/20 bg-accent/5">
             <Shield className="w-8 h-8 text-accent mx-auto mb-3" />
             <h4 className="font-semibold text-foreground mb-2">Doctor Consultation</h4>
@@ -244,3 +244,4 @@ const LeadForm = () => {
 };
 
 export default LeadForm;
+

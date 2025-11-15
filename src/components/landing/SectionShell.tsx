@@ -16,20 +16,14 @@ const gradientMap: Record<NonNullable<SectionShellProps["tint"]>, string> = {
   slate: "from-slate-400/30 via-slate-200/20 to-transparent",
 };
 
-const SectionShell = ({
-  id,
-  tint = "teal",
-  children,
-  className,
-  contentClassName,
-}: SectionShellProps) => {
+const SectionShell = ({ id, tint = "teal", children, className, contentClassName }: SectionShellProps) => {
   return (
-    <section id={id} className={cn("relative py-10 sm:py-14", className)}>
+    <section id={id} className={cn("relative py-8 sm:py-10", className)}>
       <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent pointer-events-none" />
-      <div className="absolute inset-x-0 top-12 flex justify-center">
+      <div className="absolute inset-x-0 top-10 flex justify-center">
         <div
           className={cn(
-            "w-[80%] max-w-5xl h-36 rounded-[30px] blur-[85px] opacity-55 pointer-events-none",
+            "w-[78%] max-w-4xl h-28 rounded-[26px] blur-[75px] opacity-45 pointer-events-none",
             `bg-gradient-to-br ${gradientMap[tint]}`
           )}
         />
@@ -37,7 +31,7 @@ const SectionShell = ({
       <div className="container relative z-10 mx-auto px-4">
         <div
           className={cn(
-            "rounded-[24px] border border-white/70 bg-white/90 shadow-[0_20px_70px_rgba(15,23,42,0.07)] backdrop-blur-sm p-5 sm:p-6 lg:p-8",
+            "rounded-[22px] border border-white/70 bg-white/95 shadow-[0_15px_60px_rgba(15,23,42,0.06)] backdrop-blur-sm p-4 sm:p-5 lg:p-7",
             contentClassName
           )}
         >
