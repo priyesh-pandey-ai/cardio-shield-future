@@ -1,4 +1,4 @@
-import {
+﻿import {
   Accordion,
   AccordionContent,
   AccordionItem,
@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "Is CardioShield a medical device?",
     answer:
-      "No. CardioShield is a CDSCO-compliant wellness platform focused on prevention and lifestyle insights. It complements your doctor by providing early warnings and continuous monitoring, but it does not replace professional medical diagnosis or treatment.",
+      "CardioShield is intentionally registered as a CDSCO-compliant wellness product. That lets us analyse 32 lifestyle and wearable signals, deliver predictive nudges, and collaborate with your doctor faster. We do not issue diagnoses or prescriptions -- your physician always makes the final medical call with the data we surface.",
   },
   {
     question: "Do I need a smartwatch?",
@@ -24,7 +24,7 @@ const faqs = [
   {
     question: "How accurate is the AI prediction?",
     answer:
-      "Our models are trained on 10M+ Indian datapoints and have shown a 30% reduction in emergency cardiac events in pilot programs. No AI is perfect, so CardioShield provides risk indicators that must be interpreted with a clinician.",
+      "Our models are trained on 10M+ Indian datapoints and have shown a 30% reduction in emergency cardiac events in pilot programs. No AI is perfect, so CardioShield provides risk indicators that must be interpreted with your cardiologist.",
   },
   {
     question: "Is my health data secure?",

@@ -1,32 +1,52 @@
-import { Button } from "@/components/ui/button";
+﻿import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Check, Shield, Heart, Star } from "lucide-react";
+import { Check, Shield, Heart, Star, Stethoscope, Smartphone, Bell, Users } from "lucide-react";
 import SectionShell from "./SectionShell";
 
 const rupee = "\u20B9";
 
 const plans = [
   {
-    name: "Beta Charter Plan",
-    price: "INR 1,199",
-    period: "/month (3-month beta)",
-    description: "One flat membership that keeps you out of the hospital",
+    name: "Free 3-Month Preview",
+    price: "Free",
+    period: "for your first 3 months",
+    description: "Use the entire CardioShield stack before you ever pay us.",
     features: [
-      "Full AI prevention stack + clinician review",
-      "Wearable + lab syncing included",
-      "6-minute escalation to your care circle",
-      "Family-ready playbooks and WhatsApp updates",
-      "30-day money-back guarantee",
-      "Cancel anytime - zero hidden fees",
+      { label: "Weekly AI prevention reports tuned to your biomarkers", icon: Stethoscope },
+      { label: "We onboard every wearable + lab feed for you", icon: Smartphone },
+      { label: "Rapid WhatsApp concierge and care circle alerts", icon: Bell },
     ],
-    cta: "Join the Beta Cohort",
+    cta: "Claim Free Preview Access",
+    note: "No card required. Cancel in a tap if it is not for you.",
+  },
+  {
+    name: "Charter Plan",
+    price: `${rupee}1,199`,
+    period: "/month after preview",
+    description: "Flat-fee membership that keeps you out of the cath lab.",
+    features: [
+      { label: "Full AI prevention stack + CardioShield review", icon: Stethoscope },
+      { label: "Wearable + lab syncing included", icon: Smartphone },
+      { label: "6-minute escalation to your care circle", icon: Bell },
+      { label: "Family-ready playbooks and WhatsApp updates", icon: Users },
+      { label: "30-day money-back guarantee", icon: Shield },
+      { label: "Cancel anytime - zero hidden fees", icon: Heart },
+    ],
+    cta: "Reserve My Charter Seat",
     popular: true,
+    note: `Prefer annual? ${rupee}13,188/year (save 8%) -- ask our team during onboarding.`,
   },
 ];
 
 const Pricing = () => {
   return (
     <SectionShell id="pricing" tint="amber" contentClassName="space-y-8 bg-gradient-to-b from-white to-amber-50/40">
+      <div className="flex justify-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-amber-300 bg-white/80 px-4 py-2 text-sm font-semibold text-amber-700">
+          <Shield className="w-4 h-4" />
+          30-day money-back guarantee + cancel anytime
+        </div>
+      </div>
       <div className="text-center space-y-4 animate-fade-in-up">
         <p className="text-sm font-semibold tracking-[0.2em] text-primary uppercase">Pricing</p>
         <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">Our pricing proves whose side we're on</h2>
@@ -49,8 +69,10 @@ const Pricing = () => {
         </div>
         <div className="rounded-3xl border border-emerald-200 bg-gradient-to-b from-emerald-50 to-white p-8 text-center shadow-xl">
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-success/80 mb-3">Our Way</p>
-          <div className="text-4xl font-bold text-success mb-1">{rupee}1,199</div>
-          <p className="text-base font-medium text-slate-700">{rupee}1,199 per month - 3-month beta - All-inclusive AI prevention.</p>
+          <div className="text-4xl font-bold text-success mb-1">{rupee}0</div>
+          <p className="text-base font-medium text-slate-700">
+            Free preview for your first 3 months, then {rupee}1,199 per month for the Charter membership with all-inclusive AI prevention.
+          </p>
           <div className="mt-6 space-y-3 text-sm text-muted-foreground">
             <p>We earn the same flat fee whether you need zero interventions or ten.</p>
             <p>Aligned incentives: we only succeed when you stay out of the hospital.</p>
@@ -103,16 +125,19 @@ const Pricing = () => {
             </CardHeader>
             <CardContent className="p-8 pt-0 space-y-6">
               <ul className="space-y-4">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">{feature}</span>
+                {plan.features.map(({ label, icon: Icon }) => (
+                  <li key={label} className="flex items-start gap-3">
+                    <Icon className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-muted-foreground">{label}</span>
                   </li>
                 ))}
               </ul>
               <Button className="w-full text-lg py-6" variant={plan.popular ? "default" : "outline"}>
                 {plan.cta}
               </Button>
+              {plan.note && (
+                <p className="text-xs text-center text-muted-foreground">{plan.note}</p>
+              )}
             </CardContent>
           </Card>
         ))}
@@ -134,10 +159,10 @@ const Pricing = () => {
           </div>
         </div>
         <p className="text-lg text-muted-foreground">
-          Start with <span className="font-semibold text-primary">three free AI reports</span> -- no card required.
+          Start with <span className="font-semibold text-primary">a three-month free preview + AI reports</span> -- no card required.
         </p>
         <p className="text-base text-slate-600">
-          This pricing isn't just a number - it's a moral argument:{" "}
+          This pricing isn't just a number - it's a moral argument: {" "}
           <span className="font-semibold text-slate-900">we profit only when you stay healthy; they profit only when you get sick.</span>
         </p>
       </div>

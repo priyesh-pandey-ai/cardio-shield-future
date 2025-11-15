@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Heart, Activity, Play, Shield, TrendingDown } from "lucide-react";
-import VideoModal from "./VideoModal";
+import { Heart, Activity, Shield, TrendingDown } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
@@ -49,7 +48,7 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 py-12 relative z-30">
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 items-start">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in-up">
             {/* Badge */}
@@ -66,9 +65,8 @@ const Hero = () => {
                   CardioShield intercepts heart trouble before hospitals get involved.
                 </span>
               </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl">
-                Every vital, lab report, and lifestyle signal is converted into a hospital-avoidance plan. Families
-                receive actionable alerts weeks before they would otherwise be rushing for an admission.
+              <p className="text-xl text-muted-foreground max-w-2xl">
+                Get 3 free AI-powered risk reports. We analyze 32 signals, refresh predictions every 5 minutes, and give you a 21-day warning window so you stay out of the ER.
               </p>
             </div>
 
@@ -95,35 +93,28 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            {/* CTA + Trust */}
+            <div className="flex flex-col lg:flex-row items-start gap-6 pt-4">
               <Button size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all bg-primary hover:bg-primary/90">
                 <Shield className="w-5 h-5 mr-2" />
-                Keep Us Out of Hospital
+                Get My 3 Free AI Reports
               </Button>
-              <VideoModal>
-                <Button variant="outline" size="lg" className="text-lg px-8">
-                  <Play className="w-5 h-5 mr-2" />
-                  Watch Prevention Story
-                </Button>
-              </VideoModal>
+              <div className="flex flex-col gap-3 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2">
+                  <Activity className="w-4 h-4 text-primary" />
+                  <span>CardioShield intervenes before ambulances are needed</span>
+                </div>
+              </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex items-center gap-6 pt-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <TrendingDown className="w-4 h-4 text-destructive" />
-                <span>{rupee}12L average ER bill avoided per family</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4 text-primary" />
-                <span>Clinicians intervene before ambulances are needed</span>
-              </div>
-            </div>
+            <p className="text-sm text-muted-foreground">
+              Powered by 10M+ Indian health signals, refreshed every 5 minutes across 32 biometrics.
+            </p>
+
           </div>
 
           {/* Right - App Video Preview */}
-          <div className="relative animate-fade-in delay-300">
+          <div className="relative animate-fade-in delay-300 self-start">
             <div className="relative rounded-3xl overflow-hidden shadow-elevated bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/20">
               {/* App Video Demo */}
               <div className="aspect-[4/3] bg-muted relative">

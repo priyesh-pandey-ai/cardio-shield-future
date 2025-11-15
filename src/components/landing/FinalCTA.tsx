@@ -27,9 +27,10 @@ const FinalCTA = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
             <Button size="lg" className="text-lg px-10 py-6 shadow-lg hover:shadow-xl">
-              Join Free — Keep Your Heart Out of Hospitals
+              Get My 3 Free AI Reports
             </Button>
           </div>
+          <p className="text-sm text-muted-foreground">No credit card required. Reports arrive in under 5 minutes.</p>
 
           {/* Trust stats */}
           <div className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto">
@@ -53,4 +54,3 @@ const FinalCTA = () => {
 };
 
 export default FinalCTA;
-

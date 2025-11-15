@@ -66,11 +66,10 @@ const LeadForm = () => {
         {/* Header */}
         <div className="text-center mb-16 space-y-4 animate-fade-in-up">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
-            Your hospital-avoidance plan starts now
+            Get your 3 free AI heart reports (no credit card required)
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Share three basics, connect your wearable, and within 5 minutes you'll know if you're trending toward an ER
-            visit — and exactly how to reverse it.
+            Share three basics, connect your wearable, and within 5 minutes you&apos;ll know if you&apos;re trending toward an ER visit—and exactly how to course-correct before symptoms show up.
           </p>
         </div>
 
@@ -222,7 +221,7 @@ const LeadForm = () => {
                 </div>
                 <div className="flex items-center gap-1">
                   <CheckCircle className="w-4 h-4 text-success" />
-                  <span>30-day guarantee</span>
+                  <span>Data stays encrypted</span>
                 </div>
               </div>
             </form>
@@ -232,7 +231,7 @@ const LeadForm = () => {
         {/* Emergency Prevention Stats */}
         <div className="text-center mt-12 space-y-4 animate-fade-in-up delay-500">
           <p className="text-muted-foreground">
-            <span className="font-semibold text-foreground">Every 60 seconds</span>, someone in India has a heart attack.
+            <span className="font-semibold text-foreground">250-300 heart-related deaths</span> happen every hour in India.
           </p>
           <p className="text-lg text-primary font-semibold">
             Don't wait. Protect your family today.
@@ -244,4 +243,3 @@ const LeadForm = () => {
 };
 
 export default LeadForm;
-

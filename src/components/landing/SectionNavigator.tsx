@@ -7,7 +7,6 @@ const sections = [
   { id: "testimonials", label: "Social Proof" },
   { id: "ai-advantage", label: "AI Advantage" },
   { id: "pricing", label: "Pricing" },
-  { id: "hospital-impact", label: "Outcomes" },
   { id: "wearables", label: "Wearables" },
   { id: "faq", label: "FAQ" },
 ];

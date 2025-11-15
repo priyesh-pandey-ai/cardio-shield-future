@@ -2,7 +2,6 @@ import Navigation from "@/components/landing/Navigation";
 import Hero from "@/components/landing/Hero";
 import WearableSupport from "@/components/landing/WearableSupport";
 import AIAdvantage from "@/components/landing/AIAdvantage";
-import SuccessMetrics from "@/components/landing/SuccessMetrics";
 import Story from "@/components/landing/Story";
 import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
@@ -22,7 +21,6 @@ const Index = () => {
         <Testimonials />
         <AIAdvantage />
         <Pricing />
-        <SuccessMetrics />
         <WearableSupport />
         <LeadForm />
         <FAQ />

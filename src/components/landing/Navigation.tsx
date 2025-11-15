@@ -9,7 +9,6 @@ const sections = [
   { label: "Social Proof", id: "testimonials", showInNav: true },
   { label: "AI Advantage", id: "ai-advantage", showInNav: true },
   { label: "Pricing", id: "pricing", showInNav: true },
-  { label: "Hospital Impact", id: "hospital-impact", showInNav: true },
   { label: "Wearables", id: "wearables", showInNav: true },
   { label: "FAQ", id: "faq", showInNav: true },
 ];
@@ -61,6 +60,10 @@ const Navigation = () => {
     }
   };
 
+  const scrollToLeadForm = () => {
+    scrollToSection("lead-form");
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4">
@@ -96,8 +99,8 @@ const Navigation = () => {
                 </button>
               ))}
             </div>
-            <Button size="sm">
-              Schedule a Call
+            <Button size="sm" onClick={scrollToLeadForm}>
+              Get My 3 Free AI Reports
             </Button>
           </div>
 
@@ -126,8 +129,8 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="px-4 py-3">
-                <Button size="sm" className="w-full">
-                  Get Started Free
+                <Button size="sm" className="w-full" onClick={scrollToLeadForm}>
+                  Get My 3 Free AI Reports
                 </Button>
               </div>
             </div>
