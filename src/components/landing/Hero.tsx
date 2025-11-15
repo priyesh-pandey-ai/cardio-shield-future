@@ -133,12 +133,6 @@ const Hero = () => {
                   </div>
                 </video>
 
-                {/* Play button overlay for user control */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <div className="w-0 h-0 border-l-[12px] border-l-white border-y-[8px] border-y-transparent ml-1"></div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
