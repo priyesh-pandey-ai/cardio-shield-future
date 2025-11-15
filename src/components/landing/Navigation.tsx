@@ -68,7 +68,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Heart className="w-6 h-6 text-primary animate-heartbeat" />
+            <Heart className="w-6 h-6 text-red-500 animate-heartbeat" />
             <span className="text-xl font-bold text-foreground">CardioShield</span>
           </div>
 
