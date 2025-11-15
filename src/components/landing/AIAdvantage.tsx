@@ -28,7 +28,7 @@ const comparisons = [
   },
   {
     traditional: "Pay INR 12,00,000+ for surgery",
-    cardioshield: "Pay INR 1,199/month for prevention",
+    cardioshield: "Pay INR 299/month for prevention",
     icon: DollarSign,
   },
   {

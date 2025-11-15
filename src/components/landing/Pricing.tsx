@@ -21,7 +21,7 @@ const plans = [
   },
   {
     name: "Charter Plan",
-    price: `${rupee}1,199`,
+    price: `${rupee}299`,
     period: "/month after preview",
     description: "Flat-fee membership that keeps you out of the cath lab.",
     features: [
@@ -34,7 +34,7 @@ const plans = [
     ],
     cta: "Reserve My Charter Seat",
     popular: true,
-    note: `Prefer annual? ${rupee}13,188/year (save 8%) -- ask our team during onboarding.`,
+    note: `Prefer annual? ${rupee}3,301/year (save 8%) -- ask our team during onboarding.`,
   },
 ];
 
@@ -71,7 +71,7 @@ const Pricing = () => {
           <p className="text-xs font-semibold tracking-[0.3em] uppercase text-success/80 mb-3">Our Way</p>
           <div className="text-4xl font-bold text-success mb-1">{rupee}0</div>
           <p className="text-base font-medium text-slate-700">
-            Free preview for your first 3 months, then {rupee}1,199 per month for the Charter membership with all-inclusive AI prevention.
+            Free preview for your first 3 months, then {rupee}299 per month for the Charter membership with all-inclusive AI prevention.
           </p>
           <div className="mt-6 space-y-3 text-sm text-muted-foreground">
             <p>We earn the same flat fee whether you need zero interventions or ten.</p>
@@ -89,16 +89,16 @@ const Pricing = () => {
             <p className="text-sm text-muted-foreground">Average emergency cost</p>
           </div>
           <div>
-            <div className="text-3xl font-bold text-primary mb-2">INR 14,388</div>
-            <p className="text-sm text-muted-foreground">CardioShield yearly cost ({rupee}1,199 x 12)</p>
+            <div className="text-3xl font-bold text-primary mb-2">INR 3,588</div>
+            <p className="text-sm text-muted-foreground">CardioShield yearly cost ({rupee}299 x 12)</p>
           </div>
           <div>
-            <div className="text-3xl font-bold text-success mb-2">INR 11,85,612</div>
+            <div className="text-3xl font-bold text-success mb-2">INR 11,96,412</div>
             <p className="text-sm text-muted-foreground">Potential savings year one</p>
           </div>
         </div>
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          <span className="font-semibold text-success">~8,300% ROI</span> if you prevent just one emergency.
+          <span className="font-semibold text-success">~33,000% ROI</span> if you prevent just one emergency.
         </p>
       </div>
 

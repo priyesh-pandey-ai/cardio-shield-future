@@ -7,7 +7,7 @@ const metricCards = [
   { value: "21 days", label: "Average warning window before ER risk", icon: Timer, color: "text-primary" },
   { value: "32 signals", label: "Wearable, lab, and lifestyle feeds analyzed", icon: Database, color: "text-success" },
   { value: "6 min", label: "CardioShield escalation time", icon: ShieldCheck, color: "text-emerald-600" },
-  { value: `${rupee}1,199`, label: "Flat preview membership - zero upsells", icon: TrendingDown, color: "text-amber-600" },
+  { value: `${rupee}299`, label: "Flat preview membership - zero upsells", icon: TrendingDown, color: "text-amber-600" },
 ];
 
 const trustBadges = [
